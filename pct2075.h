@@ -15,7 +15,8 @@
 #include <assert.h>
 
 typedef enum
-{
+{											/*!< PCT2075 address table */
+	/* SO8, TSSOP8, HWSON8 packages */
 	PACK_8_PIN_ADDR_1 	= (0b10010000),		/*!< 0x90 */
 	PACK_8_PIN_ADDR_2 	= (0b10010010),		/*!< 0x92 */
 	PACK_8_PIN_ADDR_3 	= (0b10010100),		/*!< 0x94 */
@@ -43,35 +44,36 @@ typedef enum
 	PACK_8_PIN_ADDR_25	= (0b01101010),		/*!< 0x6A */
 	PACK_8_PIN_ADDR_26	= (0b01101100),		/*!< 0x6C */
 	PACK_8_PIN_ADDR_27	= (0b01101110),		/*!< 0x6E */
+	/* TSOP6 package */
 	PACK_6_PIN_ADDR_1 	= (0b10010000),		/*!< 0x90 */
 	PACK_6_PIN_ADDR_2 	= (0b10010010),		/*!< 0x92 */
 	PACK_6_PIN_ADDR_3	= (0b10010100)		/*!< 0x94 */
 }PCT2075_Id_t;
 
 typedef enum
-{
-	OS_F_QUE_00	     	= (0x00),
-	OS_F_QUE_01	     	= (0x01),
-	OS_F_QUE_10	     	= (0x10),
-	OS_F_QUE_11	     	= (0x11)
-}Os_F_Que_t;
-
-typedef enum
-{
-	OS_POL_L	     	= (0x0),
-	OS_POL_H	     	= (0x1)
-}Os_Pol_t;
-
-typedef enum
-{
-	OS_OP_MODE_COMP	 	= (0x0),
-	OS_OP_MODE_INT	 	= (0x1)	
+{											/*!< OS fault queue programming			*/
+	OS_F_QUE_00	     	= (0x00),			/*!< queue value = 1 - default			*/
+	OS_F_QUE_01	     	= (0x01),			/*!< queue value = 2 					*/
+	OS_F_QUE_10	     	= (0x10),			/*!< queue value = 4 					*/
+	OS_F_QUE_11	     	= (0x11)			/*!< queue value = 6 					*/
+}Os_F_Que_t;		
+		
+typedef enum		
+{											/*!< OS polarity selection				*/
+	OS_POL_L	     	= (0x0),			/*!< OS active LOW	- default			*/
+	OS_POL_H	     	= (0x1)				/*!< OS active HIGH						*/
+}Os_Pol_t;		
+		
+typedef enum		
+{											/*!< OS operation mode selection		*/
+	OS_OP_MODE_COMP	 	= (0x0),			/*!< OS comparator	- default			*/
+	OS_OP_MODE_INT	 	= (0x1)				/*!< OS Interrupt						*/
 }Os_Op_Mode_t;
 
 typedef enum
-{
-	OP_MODE_NORMAL	 	= (0x0),
-	OP_MODE_SHUTDOWN 	= (0x1)
+{											/*!< device operation mode selection	*/
+	OP_MODE_NORMAL	 	= (0x0),			/*!< normal	- default					*/
+	OP_MODE_SHUTDOWN 	= (0x1)				/*!< shutdown							*/
 }Op_Mode_t;
 
 typedef struct
@@ -86,5 +88,5 @@ typedef struct
 	Op_Mode_t			OP_MODE;
 }PCT2075_t;
 
-void PCT2075_Config(PCT2075_t *device);
-int8_t PCT2075_Read(PCT2075_t *device);
+void PCT2075_Config(PCT2075_t *device);		/*!< Configure the device			*/
+int8_t PCT2075_Read(PCT2075_t *device);		/*!< Read the temperature value		*/

@@ -135,7 +135,7 @@ static void PCT2075_Write(PCT2075_Id_t id, Reg_Addr_t reg, uint8_t data)
 /* Exported functions --------------------------------------------------------*/
 
 /**
- *	@brief	: Configurate the device
+ *	@brief	: Configura the device
  *	@param	: *device		- device structure
  *	@return	: none
  */
