@@ -3,7 +3,7 @@
   * @file		: pct2075.h
   * @author		: Bunyamin TAMAR - bunyamintamar@yandex.com
   * @brief		: HAL driver for PCT2075 temperature sensor from NXP
-  *				  January 2021
+  *				  January 2021 
   ******************************************************************************
   */
 

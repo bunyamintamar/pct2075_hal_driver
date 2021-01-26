@@ -5,7 +5,7 @@
   * @brief		: HAL driver for PCT2075 temperature sensor from NXP
   *				  January 2021
   * NOTE		: Use your device specific I2C commands (400kHz)
-  *				  in PCT2075_Write(..) and PCT2075_Read(..) functions
+  *				  in PCT2075_Write(..) and PCT2075_Read(..) functions 
   ******************************************************************************
   */
 
