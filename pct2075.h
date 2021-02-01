@@ -6,6 +6,8 @@
   *				  January 2021 
   ******************************************************************************
   */
+#ifndef __PCT2075_H
+#define __PCT2075_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -90,3 +92,5 @@ typedef struct
 
 void PCT2075_Config(PCT2075_t *device);		/*!< Configure the device			*/
 int8_t PCT2075_Read(PCT2075_t *device);		/*!< Read the temperature value		*/
+
+#endif // __PCT2075_H

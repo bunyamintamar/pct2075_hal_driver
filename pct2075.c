@@ -7,6 +7,22 @@
   * NOTE		: Use your device specific I2C commands (400kHz)
   *				  in PCT2075_Write(..) and PCT2075_Read(..) functions 
   ******************************************************************************
+  * HOW TO USE THIS DRIVER?
+  *
+  * Define a PCT2075_t struct
+  * 		-> Id			: Device ID
+  *			-> Hyst			: Hysteresis value
+  *			-> OS			: Overtemperature shutdownn threshold value
+  *			-> Idle			: Time out value for I2C communication
+  *			-> OS_F_QUE		: OS register fault queue
+  *			-> OS_POL		: OS polarity
+  *			-> OS_OP_MODE	: OS operation mode
+  *			-> OP_MODE		: Operation mode
+  *
+  * Use only these two functions
+  *			-> PCT2075_Config(....) : for configuration the device
+  *			-> PCT2075_Read(....)	: for reading the temperature value
+  ******************************************************************************
   */
 
 /* Includes ------------------------------------------------------------------*/
@@ -135,7 +151,7 @@ static void PCT2075_Write(PCT2075_Id_t id, Reg_Addr_t reg, uint8_t data)
 /* Exported functions --------------------------------------------------------*/
 
 /**
- *	@brief	: Configura the device
+ *	@brief	: Configure the device
  *	@param	: *device		- device structure
  *	@return	: none
  */
